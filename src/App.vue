@@ -1,11 +1,12 @@
 <template>
-  <h1>Reaction Timer</h1>
+  <Header />
   <button @click="start">Play</button>
 </template>
 
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import Header from './components/Header.vue';
 
 
 export default defineComponent({
@@ -19,6 +20,6 @@ export default defineComponent({
       this.isPlaying = !this.isPlaying;
     }
   },
-  components: {}
+  components: { Header }
 })
 </script>
