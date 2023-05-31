@@ -1,34 +1,24 @@
 <template>
-  <div class="root">
-    <h1>this is the root component</h1>
-    <p>dynamic data: {{  someData  }}</p>
-  </div>
-
-  <Component data="hiiiiii" />
+  <h1>Reaction Timer</h1>
+  <button @click="start">Play</button>
 </template>
 
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Component from './components/Component.vue';
+
 
 export default defineComponent({
   data() {
     return {
-      someData: "hello"
+      isPlaying: false
     }
   },
-  components: {
-    Component
-  }
+  methods: {
+    start() {
+      this.isPlaying = !this.isPlaying;
+    }
+  },
+  components: {}
 })
 </script>
-
-
-<style scoped>
-.root {
-  padding: 10px 15px;
-  border: 3px solid green;
-  border-radius: 5px;
-}
-</style>
