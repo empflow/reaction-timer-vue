@@ -1,27 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="root">
+    <h1>this is the root component</h1>
+    <p>dynamic data: {{  someData  }}</p>
+  </div>
+
+  <Component data="hiiiiii" />
 </template>
+
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import Component from './components/Component.vue';
 
 export default defineComponent({
-  name: 'App',
+  data() {
+    return {
+      someData: "hello"
+    }
+  },
   components: {
-    HelloWorld
+    Component
   }
-});
+})
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+<style scoped>
+.root {
+  padding: 10px 15px;
+  border: 3px solid green;
+  border-radius: 5px;
 }
 </style>
