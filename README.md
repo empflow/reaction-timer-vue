@@ -1,2 +1,2 @@
-Reaction timer<br />
+**Reaction timer**<br />
 made with vue
